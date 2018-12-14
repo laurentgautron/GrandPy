@@ -16,27 +16,26 @@
   </head>
 
   <body>
-    <header class="bg-dark fixed-top container">
+    <header class="bg-dark fixed-top container-fluid">
             <div class="row">
-                <div class="col-lg-6"><h1>Bienvenu sur Grandpy Bot !! </h1></div>
-                <div class="col-lg-6"><h2><i>un peu d'histoire sur vos destinations</i></h2></div>
+                <h1 class="col-lg-6">Bienvenu sur Grandpy Bot !! </h1>
+                <h2 class="col-lg-6"><i>un peu d'histoire sur vos destinations</i></h2>
             </div>
     </header>
 
-    <main role="main" class="container">
-
-      <div id="response"></div>
-      <form class="form my-2 my-lg-0">
+    <main role="main" class="bg-white">
+      <div id="response" class="container"></div>
+      <form class="form my-2 my-lg-0 container-fluid">
           <label for="search">entrez le nom de l'endroit recherché</label>
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search">
+          <input class="form-control mr-sm-2" type="text" placeholder="ex: je veux l'adresse de Disneyland" aria-label="Search" id="search">
           <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
        </form>
-       <footer class="endpage fixed-bottom">
+    </main><!-- /.container -->
+
+    <footer class="endpage fixed-bottom container-fluid">
            <p>Site conçu par <span class="author">Laurent GAUTRON</span></p>
            <p>le code se trouve sur <a href="https://github.com/laurentgautron/GrandPy">GitHub</a></p>
-       </footer>
-
-    </main><!-- /.container -->
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
