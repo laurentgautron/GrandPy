@@ -1,5 +1,6 @@
 import json
 import re
+import requests
 
 
 class Parse:
@@ -7,7 +8,7 @@ class Parse:
 
     def __init__(self, sentence):
 
-        self.sentence = (re.sub(r"[,.;/:!_']", r" ", sentence))
+        self.sentence = (re.sub(r"[-,.;/:!_']", r" ", sentence))
         self.sentence = (re.sub(r"[' ']{2,}", r" ", self.sentence))
         self.sentence = self.sentence.split(" ")
 

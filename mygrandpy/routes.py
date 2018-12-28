@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import requests
 
 from .models import Parse
 
@@ -15,5 +16,5 @@ def home():
 def answer():
     """ the answer """
     rep = request.form['question']
-    word_list = Parse(rep)
-    return jsonify(word_list.select_word())
+    words = Parse(rep)
+    return jsonify(words.select_word())
