@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+
 import requests
 
 from .models import Parse
@@ -8,7 +9,7 @@ grand_app = Flask(__name__)
 
 @grand_app.route('/')
 def home():
-    """ the home page html """
+    """ the homepage html """
     return render_template('index.html')
 
 

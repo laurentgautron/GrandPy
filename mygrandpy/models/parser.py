@@ -1,5 +1,6 @@
 import json
 import re
+
 import requests
 
 
@@ -8,9 +9,10 @@ class Parse:
 
     def __init__(self, sentence):
 
-        self.sentence = (re.sub(r"[-,.;/:!_']", r" ", sentence))
-        self.sentence = (re.sub(r"[' ']{2,}", r" ", self.sentence))
-        self.sentence = self.sentence.split(" ")
+        sentence = (re.sub(r"[-,.;/:!_'?]|[0-9]+", r" ", sentence))
+        sentence = (re.sub(r"[' ']{2,}", r" ", sentence))
+        sentence = (re.sub(r"[' ']$", r"", sentence))
+        self.sentence = sentence.split(" ")
 
     def select_word(self):
         """ select words which can be used in map API, return a list of words """
@@ -23,4 +25,5 @@ class Parse:
             print(word)
             if word not in stop_word_dict:
                 retained_text.append(word)
+        print(retained_text)
         return retained_text
