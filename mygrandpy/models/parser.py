@@ -1,7 +1,6 @@
+""" modules to parse sentences """
 import json
 import re
-
-import requests
 
 
 class Parse:
@@ -10,9 +9,8 @@ class Parse:
     def __init__(self, sentence):
 
         sentence = (re.sub(r"[-,.;/:!_'?]|[0-9]+", r" ", sentence))
-        sentence = (re.sub(r"[' ']{2,}", r" ", sentence))
-        sentence = (re.sub(r"[' ']$", r"", sentence))
-        self.sentence = sentence.split(" ")
+        sentence = (re.sub(r"[\s]{2,}", r" ", sentence))
+        self.sentence = sentence.strip().split(" ")
 
     def select_word(self):
         """ select words which can be used in map API, return a list of words """

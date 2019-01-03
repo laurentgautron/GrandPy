@@ -1,4 +1,6 @@
-from mygrandpy import grand_app
+
+""" run the application """
+from mygrandpy import app
 
 if __name__ == "__main__":
-    grand_app.run(debug=True)
+    app.run(debug=True)
