@@ -88,3 +88,12 @@ h1, h3 {
     align-items: center;
     width: 100%;
 }
+
+#map {
+    border: 5px blue solid;
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:50%;
+    height: 70%;
+}

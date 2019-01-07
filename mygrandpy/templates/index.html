@@ -7,12 +7,16 @@
     <meta name="author" content="">
     <title>Grandpy Bot</title>
 
+    <!-- mapbox css -->
+
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/grandpy.css') }}" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
   </head>
 
   <body>
@@ -22,17 +26,18 @@
                 <h3 class="col-lg-6"><i>un peu d'histoire sur vos destinations</i></h3>
             </div>
     </header>
-
+    <!--container -->
     <main role="main" class="bg-white">
       <div id="response" class="container-fluid"></div>
+      <div id="map" class="container-fluid"></div>
       <form class="form my-2 my-lg-0">
           <label for="search">entrez le nom de l'endroit recherché</label>
           <input class="form-control mr-sm-2" type="text" placeholder="ex: je veux l'adresse de Disneyland"
                  aria-label="Search" id="search" size="100" autofocus>
           <button class="btn btn-success my-2 my-sm-0" type="submit" id="send">Search</button>
        </form>
-    </main><!-- /.container -->
-
+    </main>
+    <!-- /.container -->
     <footer class="endpage fixed-bottom container-fluid">
            <p>Site conçu par <span class="author">Laurent GAUTRON</span></p>
            <p>le code se trouve sur <a href="https://github.com/laurentgautron/GrandPy">GitHub</a></p>
@@ -41,10 +46,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <script src="{{ url_for('static', filename='js/grandpy.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>-->
 
   </body>

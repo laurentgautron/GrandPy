@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request, jsonify
 
-from .models import Parse
+from .models import Parse, Coord
 
 APP = Flask(__name__)
 
@@ -18,4 +18,6 @@ def answer():
     """ the answer """
     rep = request.form['question']
     words = Parse(rep)
-    return jsonify(words.select_word())
+    coord = Coord.number(words.select_word())
+    print(coord)
+    return jsonify(coord)
