@@ -21,8 +21,15 @@ class Parse:
         retained_text = []
         for word in self.sentence:
             word = word.lower()
-            print(word)
             if word not in stop_word_dict:
                 retained_text.append(word)
-        print(retained_text)
         return retained_text
+
+    @staticmethod
+    def concat(word_place):
+        """ concat retain words if there are more than one word"""
+
+        place = ''
+        for word in word_place:
+            place = place + " " + word
+        return place

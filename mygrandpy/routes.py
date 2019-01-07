@@ -18,6 +18,11 @@ def answer():
     """ the answer """
     rep = request.form['question']
     words = Parse(rep)
-    coord = Coord.number(words.select_word())
-    print(coord)
-    return jsonify(coord)
+    place = words.select_word()
+    print(place)
+    if len(place) > 1:
+        place = words.concat(place)
+    print(place)
+    local = Coord.number(place)
+    print(local)
+    return jsonify({"coord": local['geometry']['coordinates'], "place": local['place_name']})
