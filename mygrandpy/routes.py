@@ -25,5 +25,4 @@ def answer():
         place = str.join(place)
     print(place)
     local = Coord.number(place)
-    print(local)
     return jsonify({"coord": local['geometry']['coordinates'], "place": local['place_name']})
