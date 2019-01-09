@@ -9,5 +9,6 @@ class Coord:
 
         geocoder = Geocoder(access_token='pk.eyJ1IjoidXNodWFuZ28iLCJhIjoiY2pxZ3Eyd2JmNTE5YjQ4ank5YzBqMG1neCJ9.DVSLrBIEeZzjU2e3GY17dQ')
         response = geocoder.forward('{}, France'.format(place))
+        print(response.json())
         localise = response.json()['features'][0]
         return localise

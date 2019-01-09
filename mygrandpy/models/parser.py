@@ -24,12 +24,3 @@ class Parse:
             if word not in stop_word_dict:
                 retained_text.append(word)
         return retained_text
-
-    @staticmethod
-    def concat(word_place):
-        """ concat retain words if there are more than one word"""
-
-        place = ''
-        for word in word_place:
-            place = place + " " + word
-        return place

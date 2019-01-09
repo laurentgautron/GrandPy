@@ -20,8 +20,9 @@ def answer():
     words = Parse(rep)
     place = words.select_word()
     print(place)
+    str = " "
     if len(place) > 1:
-        place = words.concat(place)
+        place = str.join(place)
     print(place)
     local = Coord.number(place)
     print(local)
