@@ -19,10 +19,11 @@ def answer():
     rep = request.form['question']
     words = Parse(rep)
     place = words.select_word()
-    print(place)
-    str = " "
+    print('la place avant parser: ', place)
     if len(place) > 1:
-        place = str.join(place)
-    print(place)
-    local = Coord.number(place)
-    return jsonify({"coord": local['geometry']['coordinates'], "place": local['place_name']})
+        place = " ".join(place)
+    local = Coord.setting_place(place)
+    setting = {}
+    if local:
+        setting = local
+    return jsonify(setting)

@@ -2,3 +2,4 @@
 __pycache__
 grandpyenv
 venv
+.pytest_cache

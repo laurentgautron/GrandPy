@@ -1,7 +1,6 @@
 """ modules to parse sentences """
 import json
 import re
-from mapbox import Geocoder
 
 
 class Parse:
