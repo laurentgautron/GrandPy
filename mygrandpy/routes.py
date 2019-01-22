@@ -26,4 +26,5 @@ def answer():
     setting = {}
     if local:
         setting = local
+        print("les setting", setting)
     return jsonify(setting)
