@@ -8,7 +8,7 @@ class Parse:
 
     def __init__(self, sentence):
 
-        sentence = re.sub(r"[-,.;/:!_'?]|[0-9]+", r" ", sentence)
+        sentence = re.sub(r"[-,.;/:\]!_'?\[()*<>=\"&°@+{}\/]|[0-9]+", r" ", sentence)
         sentence = re.sub(r"[\s]{2,}", r" ", sentence)
         self.sentence = sentence.strip().split(" ")
 
