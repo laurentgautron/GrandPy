@@ -12,10 +12,8 @@ class Coord:
         response = geocoder.forward('{}'.format(place))
         print("la response", response)
         localise = response.json()
-        print("le json", type(localise))
-        print('les features: ', localise['features'][0])
         setting = {}
-        if localise['features'][0]:
+        if localise['features']:
             setting = {"coord": localise['features'][0]['geometry']['coordinates'],
                        "place": localise['features'][0]['place_name']}
         return setting

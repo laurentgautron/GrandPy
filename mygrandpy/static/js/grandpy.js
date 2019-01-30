@@ -5,7 +5,9 @@ $('form').keydown(function(e) {
             data: {question: $('#search').val()},
             type: "POST",
             success: function (resp) {
-                if (resp !== {}) {
+                console.log("la reponse", resp);
+                console.log(resp==true);
+                if (resp) {
                     $responseDiv = $('#response');
                     $responseDiv.append("<p class='usermessage'>" + $('#search').val() + "</p>");
                     $responseDiv.append("<p class='botmessage'> oui, je connais l'adresse de " + resp['place'] + "</p>");

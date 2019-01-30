@@ -23,9 +23,8 @@ def answer():
     if len(place) > 1:
         place = " ".join(place)
     local = Coord.setting_place(place)
-    setting = {}
-    if local:
-        setting = local
-        print("les setting", setting)
-        return jsonify(setting)
+    print("le local", local)
+    if not local:
+        local = ""
+    return jsonify(local)
 
